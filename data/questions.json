@@ -1,0 +1,114 @@
+{
+  "questions": [
+    {
+      "question": "What does 'HTTP' stand for?",
+      "options": [
+        "HyperText Transfer Protocol",
+        "HyperText Transmission Protocol",
+        "Hyperlink Transfer Protocol",
+        "Hyperlink Transmission Protocol"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which programming language is primarily used for web development on the client side?",
+      "options": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "Ruby"
+      ],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "What is the purpose of a 'database index'?",
+      "options": [
+        "To improve data security",
+        "To speed up query retrieval times",
+        "To store backup copies of data",
+        "To manage user access permissions"
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "Which of the following is a version control system?",
+      "options": [
+        "Git",
+        "Jira",
+        "Slack",
+        "Docker"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "In which year was the first iPhone released?",
+      "options": [
+        "2005",
+        "2007",
+        "2008",
+        "2010"
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "What does 'SEO' stand for in digital marketing?",
+      "options": [
+        "Search Engine Optimization",
+        "Social Engagement Optimization",
+        "Search Engine Organization",
+        "Social Engagement Organization"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which of the following is a commonly used markup language for creating web pages?",
+      "options": [
+        "CSS",
+        "JavaScript",
+        "HTML",
+        "SQL"
+      ],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "What is the primary function of an 'operating system'?",
+      "options": [
+        "To manage hardware and software resources",
+        "To develop applications",
+        "To provide internet connectivity",
+        "To store user data"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "What does 'API' stand for?",
+      "options": [
+        "Application Programming Interface",
+        "Application Protocol Interface",
+        "Automated Programming Interface",
+        "Application Procedure Interface"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which technology is used for creating virtual machines?",
+      "options": [
+        "Kubernetes",
+        "Docker",
+        "VMware",
+        "Git"
+      ],
+      "correctOption": 3,
+      "points": 10
+    }
+  ]
+}
