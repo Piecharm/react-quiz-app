@@ -1,5 +1,6 @@
 import { useEffect, useReducer } from "react";
 import Header from "./components/Header";
+import Main from "./components/Main";
 
 const initialState = {
     questions: [],
@@ -12,7 +13,6 @@ function reducer(state, action) {
             return { ...state, questions: action.payload, status: "ready" };
         case "GET_QUIZ_FAILURE":
             return { ...state, status: "error" };
-
         default:
             return state;
     }
@@ -20,6 +20,7 @@ function reducer(state, action) {
 
 function App() {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const { status } = state;
 
     useEffect(function () {
         async function getQuizDetails() {
@@ -37,6 +38,7 @@ function App() {
     return (
         <div>
             <Header />
+            <Main>{status === "loading" && `Loading questions...`}</Main>
         </div>
     );
 }
