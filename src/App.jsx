@@ -1,13 +1,14 @@
 import { useEffect, useReducer } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import Loader from "./components/Loader";
 
 const initialState = {
     questions: [],
     status: "loading",
 };
 
-function reducer(state, action) {
+function quizReducer(state, action) {
     switch (action.type) {
         case "GET_QUIZ_SUCCESS":
             return { ...state, questions: action.payload, status: "ready" };
@@ -19,7 +20,7 @@ function reducer(state, action) {
 }
 
 function App() {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(quizReducer, initialState);
     const { status } = state;
 
     useEffect(function () {
@@ -38,7 +39,7 @@ function App() {
     return (
         <div>
             <Header />
-            <Main>{status === "loading" && `Loading questions...`}</Main>
+            <Main>{status === "loading" && <Loader />}</Main>
         </div>
     );
 }
