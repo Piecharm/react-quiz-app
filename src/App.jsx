@@ -2,22 +2,13 @@ import { useEffect, useReducer } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Loader from "./components/Loader";
+import quizReducer from "./reducers/QuizReducer";
+import Error from "./components/Error";
 
 const initialState = {
     questions: [],
     status: "loading",
 };
-
-function quizReducer(state, action) {
-    switch (action.type) {
-        case "GET_QUIZ_SUCCESS":
-            return { ...state, questions: action.payload, status: "ready" };
-        case "GET_QUIZ_FAILURE":
-            return { ...state, status: "error" };
-        default:
-            return state;
-    }
-}
 
 function App() {
     const [state, dispatch] = useReducer(quizReducer, initialState);
@@ -39,7 +30,10 @@ function App() {
     return (
         <div>
             <Header />
-            <Main>{status === "loading" && <Loader />}</Main>
+            <Main>
+                {status === "loading" && <Loader />}
+                {status === "error" && <Error />}
+            </Main>
         </div>
     );
 }
