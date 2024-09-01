@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import Loader from "./components/Loader";
 import quizReducer from "./reducers/QuizReducer";
 import Error from "./components/Error";
+import StartScreen from "./components/StartScreen";
 
 const initialState = {
     questions: [],
@@ -12,7 +13,8 @@ const initialState = {
 
 function App() {
     const [state, dispatch] = useReducer(quizReducer, initialState);
-    const { status } = state;
+    const { questions, status } = state;
+    const numQuestions = questions.length;
 
     useEffect(function () {
         async function getQuizDetails() {
@@ -28,11 +30,17 @@ function App() {
     }, []);
 
     return (
-        <div>
+        <div className="bg-[#fff9de] h-screen">
             <Header />
             <Main>
                 {status === "loading" && <Loader />}
                 {status === "error" && <Error />}
+                {status === "ready" && (
+                    <StartScreen
+                        numQuestions={numQuestions}
+                        dispatch={dispatch}
+                    />
+                )}
             </Main>
         </div>
     );

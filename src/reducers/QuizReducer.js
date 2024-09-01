@@ -4,6 +4,8 @@ function quizReducer(state, action) {
             return { ...state, questions: action.payload, status: "ready" };
         case "GET_QUIZ_FAILURE":
             return { ...state, status: "error" };
+        case "GET_QUIZ_START":
+            return { ...state, status: "active" };
         default:
             return state;
     }
