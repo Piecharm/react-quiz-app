@@ -5,15 +5,17 @@ import Loader from "./components/Loader";
 import quizReducer from "./reducers/QuizReducer";
 import Error from "./components/Error";
 import StartScreen from "./components/StartScreen";
+import Question from "./components/Question";
 
 const initialState = {
     questions: [],
     status: "loading",
+    index: 0,
 };
 
 function App() {
     const [state, dispatch] = useReducer(quizReducer, initialState);
-    const { questions, status } = state;
+    const { questions, status, index } = state;
     const numQuestions = questions.length;
 
     useEffect(function () {
@@ -41,6 +43,7 @@ function App() {
                         dispatch={dispatch}
                     />
                 )}
+                {status === "active" && <Question />}
             </Main>
         </div>
     );
