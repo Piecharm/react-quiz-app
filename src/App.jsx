@@ -43,7 +43,9 @@ function App() {
                         dispatch={dispatch}
                     />
                 )}
-                {status === "active" && <Question />}
+                {status === "active" && (
+                    <Question question={questions[index]} />
+                )}
             </Main>
         </div>
     );
