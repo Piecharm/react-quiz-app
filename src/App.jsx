@@ -11,11 +11,12 @@ const initialState = {
     questions: [],
     status: "loading",
     index: 0,
+    answer: null,
 };
 
 function App() {
     const [state, dispatch] = useReducer(quizReducer, initialState);
-    const { questions, status, index } = state;
+    const { questions, status, index, answer } = state;
     const numQuestions = questions.length;
 
     useEffect(function () {
@@ -44,7 +45,11 @@ function App() {
                     />
                 )}
                 {status === "active" && (
-                    <Question question={questions[index]} />
+                    <Question
+                        question={questions[index]}
+                        dispatch={dispatch}
+                        answer={answer}
+                    />
                 )}
             </Main>
         </div>
