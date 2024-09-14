@@ -7,7 +7,20 @@ function quizReducer(state, action) {
         case "GET_QUIZ_START":
             return { ...state, status: "active" };
         case "GET_NEW_ANSWER":
-            return { ...state, answer: action.payload };
+            {
+                const question = state.questions.at(state.index);
+
+                return {
+                    ...state,
+                    answer: action.payload,
+                    points:
+                        action.payload === question.correctOption
+                            ? state.points + question.points
+                            : state.points,
+                };
+            }
+        case "GET_NEXT_QUESTION":
+            return { ...state, index: state.index + 1 }
         default:
             return state;
     }
